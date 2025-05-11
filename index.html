@@ -128,6 +128,12 @@
             margin-top: 15px;
             font-weight: bold;
         }
+        
+        .install-note {
+            font-size: 0.8em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -212,6 +218,11 @@
             <h2>NMAP - Network Mapper</h2>
             <p>Network exploration and security auditing tool</p>
             
+            <div class="command-title">Installation:</div>
+            <div class="command-block">sudo apt update
+sudo apt install nmap</div>
+            <div class="install-note">(Kali Linux comes with nmap pre-installed)</div>
+            
             <div class="command-title">Basic Scan:</div>
             <div class="command-block">nmap -sV -T4 &lt;target_IP&gt;</div>
             
@@ -223,9 +234,6 @@
             
             <div class="command-title">Vulnerability Scan:</div>
             <div class="command-block">nmap --script=vuln &lt;target_IP&gt;</div>
-            
-            <div class="command-title">Save Results:</div>
-            <div class="command-block">nmap -oN results.txt &lt;target_IP&gt;</div>
         </div>
     </div>
     
@@ -236,6 +244,11 @@
             <h2>Metasploit Framework</h2>
             <p>Penetration testing platform</p>
             
+            <div class="command-title">Installation:</div>
+            <div class="command-block">sudo apt update
+sudo apt install metasploit-framework</div>
+            <div class="install-note">(Comes pre-installed in Kali Linux)</div>
+            
             <div class="command-title">Start Framework:</div>
             <div class="command-block">msfconsole</div>
             
@@ -245,14 +258,7 @@
             <div class="command-title">Use Exploit:</div>
             <div class="command-block">use exploit/path
 set RHOSTS &lt;target_IP&gt;
-set PAYLOAD windows/meterpreter/reverse_tcp
 exploit</div>
-            
-            <div class="command-title">Meterpreter Basics:</div>
-            <div class="command-block">sysinfo              # System info
-screenshot          # Take screenshot
-download file.txt   # Download file
-upload file.txt     # Upload file</div>
         </div>
     </div>
     
@@ -263,20 +269,19 @@ upload file.txt     # Upload file</div>
             <h2>SQLMap</h2>
             <p>Automatic SQL injection tool</p>
             
+            <div class="command-title">Installation:</div>
+            <div class="command-block">sudo apt update
+sudo apt install sqlmap</div>
+            <div class="install-note">(Pre-installed in Kali Linux)</div>
+            
             <div class="command-title">Basic Scan:</div>
             <div class="command-block">sqlmap -u "http://site.com?id=1"</div>
             
             <div class="command-title">List Databases:</div>
             <div class="command-block">sqlmap -u "http://site.com?id=1" --dbs</div>
             
-            <div class="command-title">List Tables:</div>
-            <div class="command-block">sqlmap -u "http://site.com?id=1" -D dbname --tables</div>
-            
             <div class="command-title">Dump Data:</div>
             <div class="command-block">sqlmap -u "http://site.com?id=1" -D dbname -T users --dump</div>
-            
-            <div class="command-title">OS Shell:</div>
-            <div class="command-block">sqlmap -u "http://site.com?id=1" --os-shell</div>
         </div>
     </div>
     
@@ -287,20 +292,19 @@ upload file.txt     # Upload file</div>
             <h2>John the Ripper</h2>
             <p>Password cracking utility</p>
             
+            <div class="command-title">Installation:</div>
+            <div class="command-block">sudo apt update
+sudo apt install john</div>
+            <div class="install-note">(Pre-installed in Kali as 'john')</div>
+            
             <div class="command-title">Dictionary Attack:</div>
             <div class="command-block">john --wordlist=rockyou.txt hashes.txt</div>
             
             <div class="command-title">Incremental Mode:</div>
             <div class="command-block">john --incremental hashes.txt</div>
             
-            <div class="command-title">Specify Hash Type:</div>
-            <div class="command-block">john --format=NT hashes.txt</div>
-            
             <div class="command-title">Show Cracked Passwords:</div>
             <div class="command-block">john --show hashes.txt</div>
-            
-            <div class="command-title">Crack SSH Key:</div>
-            <div class="command-block">john --wordlist=rockyou.txt id_rsa.hash</div>
         </div>
     </div>
     
@@ -311,17 +315,16 @@ upload file.txt     # Upload file</div>
             <h2>Hydra</h2>
             <p>Parallelized login cracker</p>
             
+            <div class="command-title">Installation:</div>
+            <div class="command-block">sudo apt update
+sudo apt install hydra</div>
+            <div class="install-note">(Pre-installed in Kali Linux)</div>
+            
             <div class="command-title">SSH Brute Force:</div>
             <div class="command-block">hydra -l admin -P passwords.txt ssh://&lt;target_IP&gt;</div>
             
             <div class="command-title">FTP Attack:</div>
             <div class="command-block">hydra -L users.txt -p Password123 ftp://&lt;target_IP&gt;</div>
-            
-            <div class="command-title">HTTP Form Attack:</div>
-            <div class="command-block">hydra -l admin -P passwords.txt &lt;target_IP&gt; http-post-form "/login.php:user=^USER^&pass=^PASS^:F=incorrect"</div>
-            
-            <div class="command-title">RDP Attack:</div>
-            <div class="command-block">hydra -L users.txt -P passwords.txt rdp://&lt;target_IP&gt;</div>
         </div>
     </div>
     
@@ -332,21 +335,18 @@ upload file.txt     # Upload file</div>
             <h2>Wireshark</h2>
             <p>Network protocol analyzer</p>
             
-            <div class="command-title">Start Capture:</div>
-            <div class="command-block">wireshark -i eth0</div>
+            <div class="command-title">Installation:</div>
+            <div class="command-block">sudo apt update
+sudo apt install wireshark</div>
+            <div class="install-note">(Pre-installed in Kali Linux)</div>
+            
+            <div class="command-title">Start Capture (CLI):</div>
+            <div class="command-block">sudo wireshark</div>
             
             <div class="command-title">Common Filters:</div>
             <div class="command-block">http                  # HTTP traffic
 ip.src==192.168.1.1    # Traffic from IP
-tcp.port==80           # Port 80 traffic
-arp                   # ARP packets
-dns                   # DNS queries</div>
-            
-            <div class="command-title">Save Capture:</div>
-            <div class="command-block">File → Save As...</div>
-            
-            <div class="command-title">Follow TCP Stream:</div>
-            <div class="command-block">Right-click packet → Follow → TCP Stream</div>
+tcp.port==80           # Port 80 traffic</div>
         </div>
     </div>
     
